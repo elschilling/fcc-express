@@ -1,41 +1,10 @@
 let express = require('express');
 let app = express();
-console.log("Hello World")
+
+app.use(express.static(__dirname + "/public"));
+
+absolutePath = __dirname + '/views/index.html'
 
 app.get('/', (req, res) => {
-    res.send('Hello Express')
-  })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- module.exports = app;
+  res.sendFile(absolutePath)
+})
